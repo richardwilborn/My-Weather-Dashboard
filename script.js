@@ -1,27 +1,27 @@
-//global variables
-var weatherApiRootUrl = 'https://api.openweathermap.org';
-var weatherApiKey = 'e80a21913ec0a12015733c7bd52e62b8';
+var button = document.querySelector('.button')
+var inputValue = document.querySelector('.inputValue')
+var city = document.querySelector('.city');
+var desc = document.querySelector('.desc');
+var temp = document.querySelector('.temp');
+var humidity = document.querySelector('.humidity');
+var wind = document.querySelector('.wind');
 
-//timezones
-dayjs.extend(window.dayjs_plugin_utc);
-dayjs.extend(window.dayjs_plugin_timezone);
-
-function renderForecastCard(forecast, timezone) {
-  //vars from api
-  var unixTs = forecast.dt;
-  var iconUrl = 'http://openweathermap.org/img/w/' + forecast.weather[0].icon + '.png';
-  var iconDescription = forecast.weather[0].description;
-  var tempF = forecast.temp.day;
-  var { humidity } = forecast;
-  var windMph = forecast.wind_speed;
-
-  // elements creation
-  var col = document.createElement('div');
-  var card = document.createElement('div');
-  var cardBody = document.createElement('div');
-  var cardTitle = document.createElement('h5');
-  var weatherIcon = document.createElement('img');
-  var tempEl = document.createElement('p');
-  var windEl = document.createElement('p');
-  var humidityEl = document.createElement('p');
-}
+button.addEventListener('click',function(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=bd3ba241aca40d4970e34ff6dd13e4b0&units=imperial')
+    .then(response => response.json())
+    .then(data => { console.log(data)
+      var nameValue = data.name;
+      var tempValue = data.main.temp;
+      var descValue = data.weather[0].description;
+      var humidityValue = data.main.humidity 
+      var windValue = data.wind.speed
+    
+      city.innerHTML =nameValue;
+      temp.innerHTML = tempValue;
+      desc.innerHTML = descValue;
+      humidity.innerHTML = humidityValue;
+      wind.innerHTML = windValue;
+    })
+ 
+ .catch(err => alert("Wrong city name!"))
+})
