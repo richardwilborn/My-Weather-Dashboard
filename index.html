@@ -11,22 +11,25 @@
   
   <body>
     <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-      <h1>My Weather Dashboard</h1>
+      <h1>Weather Dashboard</h1>
     </header>
 
-    <button class="input-group">
-      <input class="form-imput weather-search" type="text" id="search-input" placeholder="Austin">
-      <input type="submit" class="btn search-button" id="search-button">
-    </button>
-
-    <div class="display">
-      <h1 class="maintext city"></h1>
-      <p class="maintext desc"></p>
-      <p class="maintext temp"></p>
-      <p class="maintext humidity"></p>
-      <p class="maintext wind"></p>
+    <div class="input">
+        <input type="text" class="inputValue" placeholder="Type a City Here">
+        <input type="submit" value="Submit" class="button">
+    </div>
+    
+    <div class="current conditions">
+      <h2>Current Conditions</h2>
+      <p>City Name:</p><h1 class="maintext city"></h1>
+      <p>Current Conditions:</p><p class="maintext desc"></p>
+      <p>Current Temperature:</p><p class="maintext temp"></p>
+      <p>Current Humidity:</p><p class="maintext humidity"></p>
+      <p>Current Wind Speed:</p><p class="maintext wind"></p>
     </div>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+    
+    
+     <script src="script.js"></script>
+    </body>
+  </html>

@@ -17,10 +17,10 @@ button.addEventListener('click',function(){
       var windValue = data.wind.speed
     
       city.innerHTML =nameValue;
-      temp.innerHTML = tempValue;
+      temp.innerHTML = tempValue + "°F";
       desc.innerHTML = descValue;
-      humidity.innerHTML = humidityValue;
-      wind.innerHTML = windValue;
+      humidity.innerHTML = humidityValue + "%";
+      wind.innerHTML = windValue + "mph";
     })
  
  .catch(err => alert("Wrong city name!"))
