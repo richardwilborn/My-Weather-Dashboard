@@ -5,3 +5,4 @@ A weather dashboard that provides the current weather conditions for a city that
 https://richardwilborn.github.io/My-Weather-Dashboard/
 
 # Screenshots
+<img width="1253" alt="Screenshot 2022-11-28 at 11 30 26 AM" src="https://user-images.githubusercontent.com/45742979/204342929-b11afde8-d331-4b7d-b082-bfc85900bea3.png">
